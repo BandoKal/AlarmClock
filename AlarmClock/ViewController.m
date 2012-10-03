@@ -30,7 +30,7 @@
 @implementation ViewController
 @synthesize timeLabel, dateLabel;
 @synthesize meridiemLabel;
-@synthesize timer;
+@synthesize timer,alarmDate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -105,8 +105,41 @@
     NSString *mString = [meridiemFormatter stringFromDate:[NSDate date]];
     meridiemLabel.text = [mString substringFromIndex:[mString length]-2];
     
+    NSLog(@"%@  ----- %@",alarmDate,[NSDate date]);
+    if ([[NSDate date] compare: alarmDate] == NSOrderedDescending) {
+        
+        NSLog(@"Alarm triggered!");
+    }
+    
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"pushAlarm"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        
+        AlarmTableViewController *nextController = [navController.viewControllers objectAtIndex:0];
+        
+        nextController.timeString = [[NSString alloc]initWithString:timeLabel.text];
+        nextController.delegate = self;
+        
+    }
+}
+
+#pragma mark - AlarmDelegate Protocol method implementations
+
+-(void)alarmCancelWithSender:(AlarmTableViewController *)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)alarmDoneWithSender:(AlarmTableViewController *)sender
+{
+    alarmDate = [sender.datePickerOutlet date];
+    NSLog(@"%@", alarmDate);
+    NSLog(@"%@", [NSDate date]);
+    [sender dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

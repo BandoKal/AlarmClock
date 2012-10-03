@@ -61,13 +61,15 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fKh-jr-hfF" kind="push" id="W2z-YG-Hq3"/>
+                                    <segue destination="vVr-qY-9CI" kind="modal" identifier="pushAlarm" id="W2z-YG-Hq3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Clock" id="0AE-OZ-6eb"/>
+                    <navigationItem key="navigationItem" title="Clock" id="0AE-OZ-6eb">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="5zX-cA-BTS"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="cVD-wZ-FNR" id="vIJ-6a-oN1"/>
                         <outlet property="meridiemLabel" destination="Wae-g8-3tN" id="p62-4J-FWM"/>
@@ -88,17 +90,17 @@
                         <sections>
                             <tableViewSection headerTitle="Current Time" id="vSS-Kj-ODL">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="58" id="Hi9-1L-gKo">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="60"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="28" id="Hi9-1L-gKo">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="57"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="88:88:88" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="28" id="qlM-uH-WYZ">
-                                                    <rect key="frame" x="69" y="10" width="162" height="37"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="88:88:88" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="qlM-uH-WYZ">
+                                                    <rect key="frame" x="62" y="0.0" width="162" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DBLCDTempBlack" family="DB LCD Temp" pointSize="28"/>
+                                                    <fontDescription key="fontDescription" name="DBLCDTempBlack" family="DB LCD Temp" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -109,10 +111,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="YBm-Z5-S9B">
+                            <tableViewSection headerTitle="Alarm Volume" id="YBm-Z5-S9B">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="37" id="kr0-2l-Hha">
-                                        <rect key="frame" x="0.0" y="126" width="320" height="39"/>
+                                        <rect key="frame" x="0.0" y="122" width="320" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="36"/>
@@ -132,7 +134,7 @@
                             <tableViewSection id="j9x-5T-1ml">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="217" id="IGh-Zc-Bym">
-                                        <rect key="frame" x="0.0" y="185" width="320" height="219"/>
+                                        <rect key="frame" x="0.0" y="181" width="320" height="219"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="216"/>
@@ -180,13 +182,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="fKh-jr-hfF" id="Oe1-lP-yas"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="BiN-5u-eqc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JQl-CN-b9C"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5pJ-cr-Pd4"/>
+                    <navigationItem key="navigationItem" title="Alarm" id="Tsv-9a-98W">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jmn-07-cug">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="fKh-jr-hfF" id="oVr-dd-DGY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qag-NC-sGp">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="fKh-jr-hfF" id="nw8-rX-XDx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="currentTimeLabel" destination="qlM-uH-WYZ" id="MC6-ew-IBB"/>
+                        <outlet property="datePickerOutlet" destination="l2j-8L-elY" id="ljv-g0-wNb"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1134" y="-462"/>
+            <point key="canvasLocation" x="1660" y="-462"/>
         </scene>
         <scene sceneID="hqO-Bz-1zF">
             <objects>
@@ -251,26 +265,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-163" y="126"/>
         </scene>
+        <scene sceneID="LNi-MU-Fx5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6M-qn-Nu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="vVr-qY-9CI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="efU-35-lWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fKh-jr-hfF" kind="relationship" relationship="rootViewController" id="NuE-29-DHn"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1134" y="-462"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gear_wheel_256.png" width="256" height="256"/>
     </resources>
-    <classes>
-        <class className="AlarmTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmTableViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="meridiemLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WorldTimeTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorldTimeTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

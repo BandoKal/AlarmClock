@@ -27,13 +27,14 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "AlarmTableViewController.h"
 
-
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AlarmDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *meridiemLabel;
 @property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSDate *alarmDate;
 
 -(void)updateTimer;
 
