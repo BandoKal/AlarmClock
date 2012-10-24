@@ -16,7 +16,7 @@
 		62167D2E14BCE0D000550F68 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62167D2C14BCE0D000550F68 /* MainStoryboard.storyboard */; };
 		62167D3114BCE0D000550F68 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62167D3014BCE0D000550F68 /* ViewController.m */; };
 		62477DFF14C5FFB0008AE378 /* WorldTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62477DFE14C5FFAF008AE378 /* WorldTimeTableViewController.m */; };
-		62E36FC014D1A68800FBBC4A /* gear_wheel_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E36FBF14D1A68800FBBC4A /* gear_wheel_256.png */; };
+		62DD15121638580D006ECDB7 /* gear_wheel_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DD15111638580D006ECDB7 /* gear_wheel_256.png */; };
 		62E36FC414D1AA2300FBBC4A /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E36FC314D1AA2300FBBC4A /* AlarmTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		62167D3014BCE0D000550F68 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		62477DFD14C5FFAF008AE378 /* WorldTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldTimeTableViewController.h; sourceTree = "<group>"; };
 		62477DFE14C5FFAF008AE378 /* WorldTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldTimeTableViewController.m; sourceTree = "<group>"; };
-		62E36FBF14D1A68800FBBC4A /* gear_wheel_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear_wheel_256.png; path = "../../MTSU Mobile/MTSU Mobile/gear_wheel_256.png"; sourceTree = "<group>"; };
+		62DD15111638580D006ECDB7 /* gear_wheel_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_wheel_256.png; sourceTree = "<group>"; };
 		62E36FC214D1AA2300FBBC4A /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
 		62E36FC314D1AA2300FBBC4A /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		62167D2014BCE0D000550F68 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
-				62E36FBF14D1A68800FBBC4A /* gear_wheel_256.png */,
+				62DD15111638580D006ECDB7 /* gear_wheel_256.png */,
 				62167D2914BCE0D000550F68 /* AppDelegate.h */,
 				62167D2A14BCE0D000550F68 /* AppDelegate.m */,
 				62167D2C14BCE0D000550F68 /* MainStoryboard.storyboard */,
@@ -163,7 +163,7 @@
 			files = (
 				62167D2514BCE0D000550F68 /* InfoPlist.strings in Resources */,
 				62167D2E14BCE0D000550F68 /* MainStoryboard.storyboard in Resources */,
-				62E36FC014D1A68800FBBC4A /* gear_wheel_256.png in Resources */,
+				62DD15121638580D006ECDB7 /* gear_wheel_256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
